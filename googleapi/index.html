@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VetGPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="icon" type="image/png" href="../1.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="--dark-theme" id="chat">
+      <div class="baslik">
+        <div class="yazi"><span>Vet GPT</span></div>
+      </div>
+      <div class="chat__conversation-board" id="chat-board">
+        <div class="chat__conversation-board__message-container" >
+          <div class="chat__conversation-board__message__person">
+            <div class="chat__conversation-board__message__person__avatar">
+              <img src="../1.png" alt="VetGPT" />
+            </div>
+          </div>
+          <div class="chat__conversation-board__message__context">
+            <div class="chat__conversation-board__message__bubble">
+              <span
+                >Merhaba ben akılllı veteriner VetGPT size nasıl yardımcı olabilirim? </span
+              >
+            </div>
+          </div>
+        </div>
+        
+
+
+
+        <!-- <div class="chat__conversation-board__message-container reversed">
+          <div class="chat__conversation-board__message__person">
+            <div class="chat__conversation-board__message__person__avatar"><
+              <img src="../anonim.png" alt="Dennis Mikle" />
+            </div>
+          </div>
+          <div class="chat__conversation-board__message__context">
+            <div class="chat__conversation-board__message__bubble">
+              <span>Winamp's still an essential.</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="chat__conversation-panel">
+        <div class="chat__conversation-panel__container">
+        
+    
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </button>
+          <input
+            class="chat__conversation-panel__input panel-item" id="user-input" type="text"
+            placeholder="Bir soru sorun ..."
+          />
+          <button
+            class="chat__conversation-panel__button panel-item btn-icon send-message-button" id="send-button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              data-reactid="1036"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <script  type="module" src="./script.js"></script>
+   
+  </body>
+</html>
