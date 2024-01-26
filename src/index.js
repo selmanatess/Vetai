@@ -71,11 +71,36 @@ app.post("/local", async (req, res) => {
         }
       });
 
-      const result = {
-        response: qaPairs[mostSimilarIndex].answer,
-      };
+      if (maxSimilarity < 4) {
+        async function chatgbt() {
+          const stream = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [
+              {
+                role: "system",
+                content:
+                  "Selman ATEŞ tarafından geliştirilen akıllı bir veterinersin.Kullancının kendi hayvanı sorduğu hastalık belirtileri ile bir hastalık tanısı koyup o anda neler yapabileceği hakkında basit tavsiyeler verip ek olarak ise kullanması gereken ilaç vs gibi ürünleride söylüyorsun.Kullanıcıdan gelen soruların sadece veterinerlikle ilgili olan soruları cevaplayacaksın",
+              },
+              {
+                role: "user",
+                content: userInput,
+              },
+            ],
+            stream: true,
+          });
+          for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || "";
 
-      res.status(200).send(result);
+            res.write(content);
+          }
+          res.end();
+        }
+        chatgbt();
+      } else {
+        const result = qaPairs[mostSimilarIndex].answer;
+
+        res.status(200).send(result);
+      }
     });
   } catch (err) {
     console.error("Dosya okuma hatası:", err);
